@@ -18,11 +18,11 @@ app.use(express.urlencoded({limit: "20mb", extended: true}));
 app.use('/students',studentRoutes);
 
 
-// const CONNECTION_URL='mongodb+srv://guvi:jishitha@cluster.jnc7z.mongodb.net/guvi?retryWrites=true&w=majority';
+const CONNECTION_URL='mongodb+srv://guvi:jishitha@cluster.jnc7z.mongodb.net/guvi?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.CONNECTION_URL,{
+mongoose.connect(CONNECTION_URL,{
     useNewUrlParser:true,useUnifiedTopology:true
 }).then(()=>app.listen(PORT,()=>
 console.log(`connection is established and running on port:${PORT}`)
